@@ -10,20 +10,20 @@ Xata offers general purpose file attachment capabilities. The file attachments p
 
 ## Deployed app
 
-Check the app [demo](#)
+Check the app [demo](https://terie.pythonanywhere.com/)
 
 ## Setup
 
 **Clone the repository**
 
 ```
-git clone https://github.com/terieyenike/your-repo.git
+git clone https://github.com/Terieyenike/feedback.git
 ```
 
 **Navigate to the project directory**
 
 ```
-cd
+cd feedback
 ```
 
 **Install project dependencies**
