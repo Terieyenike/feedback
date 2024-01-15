@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='xata.ico') }}">
+  <title>Feedback form</title>
+</head>
+<body>
+  <section class="mx-auto max-w-6xl w-4/5 mt-10">
+        <div>
+          <h1 class="text-3xl font-serif mb-3 md:text-5xl lg:text-6xl">
+            Join the Community
+          </h1>
+          <p class="mb-10 text-slate-700">
+            Learn from experts what they love about Xata and how they use it to
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {% for item in items["records"] %}
+          <div
+            class="border-2 rounded-lg p-4 flex flex-col justify-between transition-all ease-out">
+            <p class="text-sm md:text-lg">
+              {{ item["comment"]}}
+            </p>
+            <div class="flex items-center mt-7">
+              <img
+                src="{{item["photo"][0]["url"]}}"
+                class="shrink-0 w-12 h-12 rounded-full border-slate-200 shadow mr-4 bg-black object-cover"
+                loading="lazy"
+                alt="teri" />
+              <div>
+                <p>
+                  <span class="font-bold">{{item["name"]}}</span>
+                </p>
+                <p class="text-xs md:text-sm font-light text-indigo-700">
+                 {{"@" + item["uname"]}}
+                </p>
+                <p class="text-xs md:text-sm font-light text-slate-700">
+                  {{item["role"]}}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+</body>
+</html>
